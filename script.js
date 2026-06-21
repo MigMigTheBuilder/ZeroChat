@@ -15,7 +15,7 @@ window.onload = () => {
 
 Digite:
 
-"produtos"
+"produtos" ou "e-books"
 
 para conhecer nossos produtos.`,
         "bot"
@@ -76,7 +76,8 @@ function responder(msg) {
         msg.includes("opa") ||
         msg.includes("bom dia") ||
         msg.includes("boa tarde") ||
-        msg.includes("boa noite")
+        msg.includes("boa noite") ||
+        msg.includes("ola")
     ) {
 
         return `👋 Olá!
@@ -85,7 +86,7 @@ Sou o ZeroChat da Base Zero.
 
 Digite:
 
-📚 ebooks
+"produtos" ou "e-books"
 
 para ver nossos produtos.`;
     }
