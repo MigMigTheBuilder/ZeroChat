@@ -15,7 +15,7 @@ window.onload = () => {
 
 Digite:
 
-📚 ebooks
+"produtos"
 
 para conhecer nossos produtos.`,
         "bot"
