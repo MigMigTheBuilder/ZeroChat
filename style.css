@@ -1,105 +1,159 @@
-* {
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #e5ddd5;
+html,
+body{
+    width:100%;
+    min-height:100%;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ece5dd;
 }
 
-.app {
-  max-width: 430px;
-  min-height: 100dvh;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  background: #efeae2;
+.app{
+    width:100%;
+    max-width:430px;
+    margin:auto;
+    min-height:100dvh;
+    display:flex;
+    flex-direction:column;
+    background:#ece5dd;
 }
 
-.topo {
-  background: #075e54;
-  color: white;
-  padding: 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+/* TOPO */
+
+.topo{
+    background:#075E54;
+    color:white;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-.avatar {
-  background: white;
-  color: #075e54;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: bold;
-  font-size: 20px;
+.avatar{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:white;
+    color:#075E54;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    font-weight:bold;
 }
 
-.topo h2 {
-  margin: 0;
-  font-size: 24px;
+.info h2{
+    font-size:26px;
 }
 
-.topo span {
-  font-size: 16px;
+.info span{
+    font-size:15px;
 }
 
-.chat {
-  flex: 1;
-  padding: 15px;
-  overflow-y: auto;
+/* CHAT */
+
+.chat{
+    flex:1;
+    padding:15px;
+    padding-bottom:100px;
+    overflow-y:auto;
 }
 
-.msg {
-  max-width: 78%;
-  padding: 11px 14px;
-  margin: 8px 0;
-  border-radius: 16px;
-  font-size: 17px;
-  line-height: 1.4;
-  word-wrap: break-word;
+.msg{
+    max-width:80%;
+    padding:12px 15px;
+    border-radius:16px;
+    margin:8px 0;
+    font-size:17px;
+    line-height:1.5;
+    word-break:break-word;
 }
 
-.user {
-  background: #dcf8c6;
-  margin-left: auto;
-  border-bottom-right-radius: 4px;
+.bot{
+    background:white;
+    border-bottom-left-radius:4px;
 }
 
-.bot {
-  background: white;
-  margin-right: auto;
-  border-bottom-left-radius: 4px;
+.user{
+    background:#DCF8C6;
+    margin-left:auto;
+    border-bottom-right-radius:4px;
 }
 
-.barra {
-  display: flex;
-  gap: 8px;
-  padding: 10px;
-  background: #f0f0f0;
-  position: sticky;
-  bottom: 0;
-  z-index: 10;
+/* BARRA */
+
+.barra{
+    position:fixed;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    max-width:430px;
+    background:#f0f0f0;
+    padding:10px;
+    display:flex;
+    gap:10px;
+    z-index:999;
 }
 
-.barra input {
-  flex: 1;
-  border: none;
-  border-radius: 22px;
-  padding: 13px 16px;
-  font-size: 16px;
-  outline: none;
+.barra input{
+    flex:1;
+    border:none;
+    border-radius:25px;
+    padding:14px;
+    font-size:16px;
+    outline:none;
 }
 
-.barra button {
-  border: none;
-  background: #075e54;
-  color: white;
-  border-radius: 50%;
-  width: 46px;
-  height: 46px;
-  font-size: 18px;
+.barra button{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#075E54;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* RODAPÉ */
+
+footer{
+    background:#075E54;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.footer-logo{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+footer p{
+    margin:8px 0;
+    line-height:1.5;
+    font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .info h2{
+        font-size:22px;
+    }
+
+    .msg{
+        font-size:16px;
+    }
+
 }
