@@ -73,7 +73,6 @@ function responder(msg) {
     if (
         msg.includes("oi") ||
         msg.includes("olá") ||
-        msg.includes("ola") ||
         msg.includes("opa") ||
         msg.includes("bom dia") ||
         msg.includes("boa tarde") ||
@@ -94,10 +93,21 @@ para ver nossos produtos.`;
     // LISTA DE PRODUTOS
 
     if (
-        msg.includes("ebook") ||
-        msg.includes("ebooks") ||
-        msg.includes("produto") ||
-        msg.includes("produtos")
+msg.includes("ebook") ||
+msg.includes("ebooks") ||
+msg.includes("e-book") ||
+msg.includes("e-books") ||
+msg.includes("livro") ||
+msg.includes("livros") ||
+msg.includes("produto") ||
+msg.includes("produtos") ||
+msg.includes("disponível") ||
+msg.includes("disponiveis") ||
+msg.includes("disponíveis") ||
+msg.includes("quais") ||
+msg.includes("tem") ||
+msg.includes("vocês vendem") ||
+msg.includes("voces vendem")
     ) {
 
         return `📚 Produtos Base Zero
