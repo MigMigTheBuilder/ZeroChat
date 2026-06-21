@@ -4,7 +4,7 @@ const links = {
     tiktok: "https://pay.kiwify.com.br/vzrGLaJ",
     procrastinacao: "https://pay.kiwify.com.br/TTaND3x",
     riqueza: "https://pay.kiwify.com.br/OX3zVUk",
-    kit: "https://pay.kiwify.com.br/VIFsLCL",
+    kit: "https://pay.kiwify.com.br/ygLoHQn",
     site: "https://bio.site/basezero"
 };
 
