@@ -1,17 +1,23 @@
 const links = {
-    procrastinacao: "https://pay.kiwify.com.br/ygLoHQn",
-    ia: "https://pay.kiwify.com.br/OX3zVUk",
-    tiktok: "https://pay.kiwify.com.br/TTaND3x",
-    dinheiro: "https://pay.kiwify.com.br/vzrGLaJ",
-    business: "https://pay.kiwify.com.br/RuuXM9Y",
-    premium: "https://pay.kiwify.com.br/VIFsLCL",
+    primeiroMilhao: "https://pay.kiwify.com.br/VIFsLCL",
+    ia: "https://pay.kiwify.com.br/RuuXM9Y",
+    tiktok: "https://pay.kiwify.com.br/vzrGLaJ",
+    procrastinacao: "https://pay.kiwify.com.br/TTaND3x",
+    riqueza: "https://pay.kiwify.com.br/OX3zVUk",
+    kit: "https://pay.kiwify.com.br/VIFsLCL",
     site: "https://bio.site/basezero"
 };
 
 window.onload = () => {
 
     adicionarMensagem(
-        "🚀 Olá! Eu sou o ZeroChat da Base Zero.\n\nDigite 'ebooks' para ver nossos produtos.",
+`🚀 Olá! Eu sou o ZeroChat da Base Zero.
+
+Digite:
+
+📚 ebooks
+
+para conhecer nossos produtos.`,
         "bot"
     );
 
@@ -30,12 +36,10 @@ function enviar() {
     input.value = "";
 
     setTimeout(() => {
-
         adicionarMensagem(
             responder(texto),
             "bot"
         );
-
     }, 500);
 }
 
@@ -76,44 +80,41 @@ function responder(msg) {
         msg.includes("boa noite")
     ) {
 
-        return `
-👋 Olá!
+        return `👋 Olá!
 
-Eu sou o ZeroChat da Base Zero.
+Sou o ZeroChat da Base Zero.
 
 Digite:
 
 📚 ebooks
 
-Para conhecer nossos produtos.
-`;
+para ver nossos produtos.`;
     }
 
-    // EBOOKS
+    // LISTA DE PRODUTOS
 
     if (
         msg.includes("ebook") ||
         msg.includes("ebooks") ||
+        msg.includes("produto") ||
         msg.includes("produtos")
     ) {
 
-        return `
-📚 Produtos Base Zero
+        return `📚 Produtos Base Zero
 
-🤖 IA ao Seu Favor
+💵 Do Bolso Vazio ao Primeiro Milhão
 
-📱 Viralizar no TikTok
+🧠 IA na Prática: Como usar ao Seu Favor
 
-🎯 Pare de Procrastinar
+🔥 TikTok Viral do Zero
 
-💰 Fazer Dinheiro na Internet
+👑 Fim da Procrastinação
 
-💼 Pacote Business
+💰 Do Zero à Riqueza
 
-⭐ Pacote Premium
+🔥 Kit Transformação Total
 
-Digite o nome do produto.
-`;
+Digite o nome do produto para receber o link.`;
     }
 
     // IA
@@ -125,93 +126,84 @@ Digite o nome do produto.
         msg.includes("inteligencia artificial")
     ) {
 
-        return `
-🤖 IA ao Seu Favor
+        return `🧠 IA na Prática: Como usar ao Seu Favor
 
 🛒 Comprar:
 
-${links.ia}
-`;
+${links.ia}`;
     }
 
     // TIKTOK
 
     if (
         msg.includes("tiktok") ||
-        msg.includes("viralizar")
+        msg.includes("viral")
     ) {
 
-        return `
-📱 Viralizar no TikTok
+        return `🔥 TikTok Viral do Zero
 
 🛒 Comprar:
 
-${links.tiktok}
-`;
+${links.tiktok}`;
     }
 
     // PROCRASTINAÇÃO
 
     if (
-        msg.includes("procrastinar") ||
         msg.includes("procrastinação") ||
+        msg.includes("procrastinar") ||
         msg.includes("foco")
     ) {
 
-        return `
-🎯 Pare de Procrastinar
+        return `👑 Fim da Procrastinação: O Caminho para a Riqueza
 
 🛒 Comprar:
 
-${links.procrastinacao}
-`;
+${links.procrastinacao}`;
     }
 
-    // DINHEIRO
+    // RIQUEZA
 
     if (
-        msg.includes("dinheiro") ||
-        msg.includes("internet") ||
-        msg.includes("renda")
+        msg.includes("riqueza") ||
+        msg.includes("liberdade financeira")
     ) {
 
-        return `
-💰 Fazer Dinheiro na Internet
+        return `💰 Do Zero à Riqueza: O Guia Prático para Construir Sua Liberdade Financeira
 
 🛒 Comprar:
 
-${links.dinheiro}
-`;
+${links.riqueza}`;
     }
 
-    // BUSINESS
+    // PRIMEIRO MILHÃO
 
     if (
-        msg.includes("business")
+        msg.includes("milhão") ||
+        msg.includes("milhao") ||
+        msg.includes("bolso vazio")
     ) {
 
-        return `
-💼 Pacote Business
+        return `💵 Do Bolso Vazio ao Primeiro Milhão
 
 🛒 Comprar:
 
-${links.business}
-`;
+${links.primeiroMilhao}`;
     }
 
-    // PREMIUM
+    // KIT
 
     if (
-        msg.includes("premium")
+        msg.includes("kit") ||
+        msg.includes("transformação total") ||
+        msg.includes("transformacao total")
     ) {
 
-        return `
-⭐ Pacote Premium
+        return `🔥 Kit Transformação Total
 
 🛒 Comprar:
 
-${links.premium}
-`;
+${links.kit}`;
     }
 
     // SITE
@@ -222,29 +214,26 @@ ${links.premium}
         msg.includes("link")
     ) {
 
-        return `
-🌐 Site Oficial Base Zero
+        return `🌐 Site Oficial da Base Zero
 
-${links.site}
-`;
+${links.site}`;
     }
 
-    // AJUDA
+    // SUPORTE
 
     if (
         msg.includes("ajuda") ||
         msg.includes("suporte")
     ) {
 
-        return `
-🛠️ Suporte Base Zero
+        return `🛠️ Suporte Base Zero
 
-Explique sua dúvida que farei o possível para ajudar.
-`;
+Explique sua dúvida e tentarei ajudar.`;
     }
 
-    return `
-🤔 Não entendi.
+    // RESPOSTA PADRÃO
+
+    return `🤔 Não entendi.
 
 Você pode digitar:
 
@@ -252,14 +241,17 @@ Você pode digitar:
 
 🌐 site
 
-💼 business
+🧠 ia
 
-⭐ premium
+🔥 tiktok
 
-🤖 ia
+👑 procrastinação
 
-📱 tiktok
-`;
+💰 riqueza
+
+💵 primeiro milhão
+
+🔥 kit`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -269,9 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("keypress", function (e) {
 
         if (e.key === "Enter") {
-
             enviar();
-
         }
 
     });
