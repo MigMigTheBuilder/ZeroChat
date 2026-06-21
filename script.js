@@ -1,109 +1,279 @@
-const database = {
-  saudacao: ["oi", "opa", "olá", "ola", "bom dia", "boa tarde", "boa noite"],
-
-  produtos: ["ebook", "e-book", "produto", "produtos", "livros", "material"],
-
-  business: ["business", "pacote", "pacote business"],
-
-  ia: ["ia", "inteligencia artificial", "inteligência artificial", "chatgpt"],
-
-  tiktok: ["tiktok", "viral", "viralizar"],
-
-  dinheiro: ["dinheiro", "renda", "internet"],
-
-  procrastinacao: ["procrastinar", "procrastinação", "disciplina", "foco"],
-
-  compra: ["comprar", "comprar agora", "quero comprar", "adquirir"],
-
-  preco: ["preço", "preco", "valor", "quanto custa"],
-
-  suporte: ["suporte", "ajuda", "problema"]
+const links = {
+    procrastinacao: "https://pay.kiwify.com.br/ygLoHQn",
+    ia: "https://pay.kiwify.com.br/OX3zVUk",
+    tiktok: "https://pay.kiwify.com.br/TTaND3x",
+    dinheiro: "https://pay.kiwify.com.br/vzrGLaJ",
+    business: "https://pay.kiwify.com.br/RuuXM9Y",
+    premium: "https://pay.kiwify.com.br/VIFsLCL",
+    site: "https://bio.site/basezero"
 };
 
-window.onload = function () {
-  adicionarMensagem(
-    "Olá! Eu sou o ZeroChat da Base Zero 🚀. Posso ajudar com nossos e-books, Pacote Business e suporte.",
-    "bot"
-  );
+window.onload = () => {
+
+    adicionarMensagem(
+        "🚀 Olá! Eu sou o ZeroChat da Base Zero.\n\nDigite 'ebooks' para ver nossos produtos.",
+        "bot"
+    );
+
 };
 
 function enviar() {
-  const input = document.getElementById("msg");
-  const texto = input.value.trim();
 
-  if (texto === "") return;
+    const input = document.getElementById("msg");
 
-  adicionarMensagem(texto, "user");
-  input.value = "";
+    const texto = input.value.trim();
 
-  setTimeout(() => {
-    adicionarMensagem(responder(texto), "bot");
-  }, 700);
+    if (texto === "") return;
+
+    adicionarMensagem(texto, "user");
+
+    input.value = "";
+
+    setTimeout(() => {
+
+        adicionarMensagem(
+            responder(texto),
+            "bot"
+        );
+
+    }, 500);
 }
 
 function adicionarMensagem(texto, tipo) {
-  const chat = document.getElementById("chat");
-  const div = document.createElement("div");
 
-  div.className = "msg " + tipo;
-  div.innerText = texto;
+    const chat = document.getElementById("chat");
 
-  chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
+    const div = document.createElement("div");
+
+    div.classList.add("msg");
+    div.classList.add(tipo);
+
+    const textoComLinks = texto.replace(
+        /(https?:\/\/[^\s]+)/g,
+        '<a href="$1" target="_blank">$1</a>'
+    );
+
+    div.innerHTML = textoComLinks;
+
+    chat.appendChild(div);
+
+    chat.scrollTop = chat.scrollHeight;
 }
 
 function responder(msg) {
-  msg = msg.toLowerCase();
 
-  if (database.saudacao.some(p => msg.includes(p))) {
-    return "Olá! Seja bem-vindo à Base Zero 🚀. Como posso ajudar você hoje?";
-  }
+    msg = msg.toLowerCase();
 
-  if (database.business.some(p => msg.includes(p))) {
-    return "📚 O Pacote Business inclui: IA ao Seu Favor, Como Viralizar no TikTok do Zero, Pare de Procrastinar e Como Começar do Zero e Fazer Dinheiro na Internet.";
-  }
+    // SAUDAÇÃO
 
-  if (database.ia.some(p => msg.includes(p))) {
-    return "🤖 O e-book IA ao Seu Favor mostra como usar Inteligência Artificial para estudar, criar conteúdo, organizar tarefas e aumentar a produtividade.";
-  }
+    if (
+        msg.includes("oi") ||
+        msg.includes("olá") ||
+        msg.includes("ola") ||
+        msg.includes("opa") ||
+        msg.includes("bom dia") ||
+        msg.includes("boa tarde") ||
+        msg.includes("boa noite")
+    ) {
 
-  if (database.tiktok.some(p => msg.includes(p))) {
-    return "📱 O e-book Como Viralizar no TikTok do Zero ensina estratégias para crescer, criar conteúdo e aumentar seu alcance.";
-  }
+        return `
+👋 Olá!
 
-  if (database.dinheiro.some(p => msg.includes(p))) {
-    return "💰 O e-book Como Começar do Zero e Fazer Dinheiro na Internet apresenta ideias e estratégias para iniciar projetos online.";
-  }
+Eu sou o ZeroChat da Base Zero.
 
-  if (database.procrastinacao.some(p => msg.includes(p))) {
-    return "🎯 O e-book Pare de Procrastinar aborda disciplina, foco, hábitos e organização para melhorar sua produtividade.";
-  }
+Digite:
 
-  if (database.produtos.some(p => msg.includes(p))) {
-    return "📚 Temos materiais sobre IA, TikTok, produtividade, foco, disciplina e empreendedorismo digital.";
-  }
+📚 ebooks
 
-  if (database.compra.some(p => msg.includes(p))) {
-    return "🛒 Para comprar, clique no botão de compra disponível na página oficial da Base Zero.";
-  }
+Para conhecer nossos produtos.
+`;
+    }
 
-  if (database.preco.some(p => msg.includes(p))) {
-    return "💲 Os preços podem variar conforme a promoção. Consulte a página oficial da Base Zero para ver o valor atual.";
-  }
+    // EBOOKS
 
-  if (database.suporte.some(p => msg.includes(p))) {
-    return "🛠️ Claro! Me diga qual dúvida ou problema você está tendo.";
-  }
+    if (
+        msg.includes("ebook") ||
+        msg.includes("ebooks") ||
+        msg.includes("produtos")
+    ) {
 
-  return "🤔 Posso te ajudar com Pacote Business, IA, TikTok, produtividade, compra ou suporte.";
+        return `
+📚 Produtos Base Zero
+
+🤖 IA ao Seu Favor
+
+📱 Viralizar no TikTok
+
+🎯 Pare de Procrastinar
+
+💰 Fazer Dinheiro na Internet
+
+💼 Pacote Business
+
+⭐ Pacote Premium
+
+Digite o nome do produto.
+`;
+    }
+
+    // IA
+
+    if (
+        msg.includes("ia") ||
+        msg.includes("chatgpt") ||
+        msg.includes("inteligência artificial") ||
+        msg.includes("inteligencia artificial")
+    ) {
+
+        return `
+🤖 IA ao Seu Favor
+
+🛒 Comprar:
+
+${links.ia}
+`;
+    }
+
+    // TIKTOK
+
+    if (
+        msg.includes("tiktok") ||
+        msg.includes("viralizar")
+    ) {
+
+        return `
+📱 Viralizar no TikTok
+
+🛒 Comprar:
+
+${links.tiktok}
+`;
+    }
+
+    // PROCRASTINAÇÃO
+
+    if (
+        msg.includes("procrastinar") ||
+        msg.includes("procrastinação") ||
+        msg.includes("foco")
+    ) {
+
+        return `
+🎯 Pare de Procrastinar
+
+🛒 Comprar:
+
+${links.procrastinacao}
+`;
+    }
+
+    // DINHEIRO
+
+    if (
+        msg.includes("dinheiro") ||
+        msg.includes("internet") ||
+        msg.includes("renda")
+    ) {
+
+        return `
+💰 Fazer Dinheiro na Internet
+
+🛒 Comprar:
+
+${links.dinheiro}
+`;
+    }
+
+    // BUSINESS
+
+    if (
+        msg.includes("business")
+    ) {
+
+        return `
+💼 Pacote Business
+
+🛒 Comprar:
+
+${links.business}
+`;
+    }
+
+    // PREMIUM
+
+    if (
+        msg.includes("premium")
+    ) {
+
+        return `
+⭐ Pacote Premium
+
+🛒 Comprar:
+
+${links.premium}
+`;
+    }
+
+    // SITE
+
+    if (
+        msg.includes("site") ||
+        msg.includes("base zero") ||
+        msg.includes("link")
+    ) {
+
+        return `
+🌐 Site Oficial Base Zero
+
+${links.site}
+`;
+    }
+
+    // AJUDA
+
+    if (
+        msg.includes("ajuda") ||
+        msg.includes("suporte")
+    ) {
+
+        return `
+🛠️ Suporte Base Zero
+
+Explique sua dúvida que farei o possível para ajudar.
+`;
+    }
+
+    return `
+🤔 Não entendi.
+
+Você pode digitar:
+
+📚 ebooks
+
+🌐 site
+
+💼 business
+
+⭐ premium
+
+🤖 ia
+
+📱 tiktok
+`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("msg");
 
-  input.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-      enviar();
-    }
-  });
+    const input = document.getElementById("msg");
+
+    input.addEventListener("keypress", function (e) {
+
+        if (e.key === "Enter") {
+
+            enviar();
+
+        }
+
+    });
+
 });
